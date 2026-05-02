@@ -70,3 +70,24 @@ def load_numpy_array_data(file_path :str) -> np.array:
     
 def save_object(file_path:str,obj:object) -> None:
     logging.info("Entered the save_object method of Utlis")
+
+    try:
+        os.makedirs(os.path.dirname(file_path),exist_ok=True)
+        with open(file_path,"wb") as file_obj:
+            dill.dump(obj,file_obj)
+
+    except Exception as e:
+        raise USvisaException(e,sys) from e
+    
+def drop_columns(df:DataFrame,cols:list) -> DataFrame:
+    logging.info("Entered drop_columns method of utils")
+
+    try:
+        df = df.drop(columns=cols,axis = 1)
+
+        logging.info("Exited the drop_colun=mns method of utils")
+
+        return df
+    except Exception as e:
+        raise USvisaException(e,sys) from e
+    
