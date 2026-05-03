@@ -1,9 +1,4 @@
-from visa.logger import logging
-from visa.exception import USvisaException
-import sys
-#logging.info("This is an info message from demo.py")
+from visa.pipeline.training_pipeline import TrainingPipeline
 
-try:
-    a = 1/0
-except Exception as e:
-    raise USvisaException(e,sys)
+pipeline = TrainingPipeline()
+pipeline.run_pipeline()
