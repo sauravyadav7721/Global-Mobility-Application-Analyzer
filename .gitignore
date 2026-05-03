@@ -219,4 +219,5 @@ __marimo__/
 
 notebook/mongo_db.ipynb
 
-artifacts/
+artifacts/*
+
