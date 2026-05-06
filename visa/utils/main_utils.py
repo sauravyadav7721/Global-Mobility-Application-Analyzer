@@ -1,6 +1,6 @@
 import os
 import sys
-import numpy
+import numpy as np
 import dill
 import yaml
 from pandas import DataFrame
